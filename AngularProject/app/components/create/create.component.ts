@@ -1,5 +1,6 @@
 import {Component} from "@angular/core";
 import {Location} from "@angular/common";
+import firebase = require("nativescript-plugin-firebase");
 import * as ApplicationSettings from "application-settings";
 
 @Component({
@@ -12,6 +13,8 @@ export class CreateComponent {
     public personList: Array<Object>;
     public firstname: string;
     public lastname: string;
+    public Name: string;
+   
 
     constructor(location: Location) {
         this.location = location;
@@ -19,11 +22,24 @@ export class CreateComponent {
         this.firstname = "";
         this.lastname = "";
         
+        
     }
     save() {
+        this.Name = this.firstname;
         if(this.firstname !="" && this.lastname !="") {
-            this.personList.push({firstname: this.firstname, lastname: this.lastname});
-            ApplicationSettings.setString("people", JSON.stringify(this.personList));
+              firebase.push(
+                    '/Users',
+                    {
+                    'first': this.firstname,
+                    'last': this.lastname
+                    }
+                ).then(
+                    function (result) {
+                    console.log("created key: " + result.key);
+                        }
+                );
+            // this.personList.push({firstname: this.firstname, lastname: this.lastname});
+            // ApplicationSettings.setString("people", JSON.stringify(this.personList));
             this.location.back();
         }
     }
