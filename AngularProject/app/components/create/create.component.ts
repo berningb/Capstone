@@ -30,6 +30,7 @@ export class CreateComponent {
               firebase.push(
                     '/Users',
                     {
+                    'id': 
                     'first': this.firstname,
                     'last': this.lastname
                     }
