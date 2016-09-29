@@ -1,6 +1,9 @@
+/// <reference path="../../Database/dbGetVal.ts"/>
 import {Component} from "@angular/core";
 import {Location} from "@angular/common";
 import {Router} from "@angular/router-deprecated";
+import firebase = require("nativescript-plugin-firebase");
+
 import * as ApplicationSettings from "application-settings";
 
 @Component({
@@ -8,7 +11,6 @@ import * as ApplicationSettings from "application-settings";
     templateUrl: "./components/list/list.xml",
 })
 export class ListComponent {
-    
     private router: Router;
     public personList: Array<Object>;
 
@@ -24,4 +26,6 @@ export class ListComponent {
     create() {
         this.router.navigate(["Create"]);
     }
+
+   
 }

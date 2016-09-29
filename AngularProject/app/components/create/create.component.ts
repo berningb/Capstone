@@ -1,11 +1,15 @@
+/// <reference path="../../Database/dbGetVal.ts"/>
+
 import {Component} from "@angular/core";
 import {Location} from "@angular/common";
 import firebase = require("nativescript-plugin-firebase");
 import * as ApplicationSettings from "application-settings";
 
+
 @Component({
     selector: "create",
     templateUrl: "./components/create/create.xml",
+    styleUrls: ["./components/create/create.css"],
 })
 export class CreateComponent {
     
@@ -27,21 +31,13 @@ export class CreateComponent {
     save() {
         this.Name = this.firstname;
         if(this.firstname !="" && this.lastname !="") {
-              firebase.push(
-                    '/Users',
-                    {
-                    'id': 
-                    'first': this.firstname,
-                    'last': this.lastname
-                    }
-                ).then(
-                    function (result) {
-                    console.log("created key: " + result.key);
-                        }
-                );
+              createUser("rth","thid","tjiasf","dfjk");
             // this.personList.push({firstname: this.firstname, lastname: this.lastname});
             // ApplicationSettings.setString("people", JSON.stringify(this.personList));
             this.location.back();
         }
+    }
+    back() {
+        this.location.back();
     }
 }

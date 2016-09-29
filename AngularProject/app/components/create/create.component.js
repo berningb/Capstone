@@ -24,10 +24,14 @@ var CreateComponent = (function () {
             this.location.back();
         }
     };
+    CreateComponent.prototype.back = function () {
+        this.location.back();
+    };
     CreateComponent = __decorate([
         core_1.Component({
             selector: "create",
             templateUrl: "./components/create/create.xml",
+            styleUrls: ["./components/create/create.css"],
         }), 
         __metadata('design:paramtypes', [common_1.Location])
     ], CreateComponent);
