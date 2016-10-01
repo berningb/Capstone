@@ -1,7 +1,6 @@
 "use strict";
 var core_1 = require("@angular/core");
 var common_1 = require("@angular/common");
-var firebase = require("nativescript-plugin-firebase");
 var ApplicationSettings = require("application-settings");
 var CreateComponent = (function () {
     function CreateComponent(location) {
@@ -13,12 +12,7 @@ var CreateComponent = (function () {
     CreateComponent.prototype.save = function () {
         this.Name = this.firstname;
         if (this.firstname != "" && this.lastname != "") {
-            firebase.push('/Users', {
-                'first': this.firstname,
-                'last': this.lastname
-            }).then(function (result) {
-                console.log("created key: " + result.key);
-            });
+            //   createUser("rth","thid","tjiasf","dfjk");
             // this.personList.push({firstname: this.firstname, lastname: this.lastname});
             // ApplicationSettings.setString("people", JSON.stringify(this.personList));
             this.location.back();

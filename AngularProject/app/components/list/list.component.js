@@ -1,5 +1,4 @@
 "use strict";
-/// <reference path="../../Database/dbGetVal.ts"/>
 var core_1 = require("@angular/core");
 var common_1 = require("@angular/common");
 var router_deprecated_1 = require("@angular/router-deprecated");

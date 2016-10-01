@@ -1,9 +1,7 @@
-/// <reference path="../../Database/dbGetVal.ts"/>
 import {Component} from "@angular/core";
 import {Location} from "@angular/common";
 import {Router} from "@angular/router-deprecated";
 import firebase = require("nativescript-plugin-firebase");
-
 import * as ApplicationSettings from "application-settings";
 
 @Component({

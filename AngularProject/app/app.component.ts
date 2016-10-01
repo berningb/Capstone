@@ -16,6 +16,9 @@ import {CreateComponent} from "./components/create/create.component";
     { path: "/list", component: ListComponent, name: "List", useAsDefault: true },
     { path: "/create", component: CreateComponent, name: "Create" }
 ])
+
+
+
 export class AppComponent {
 
 }
