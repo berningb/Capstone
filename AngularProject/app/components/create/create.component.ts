@@ -1,8 +1,12 @@
+/// <reference path="../../components/Database/db.component.ts" />
+
 import {Component} from "@angular/core";
 import {Location} from "@angular/common";
-import {DBStructure} from "./components/Database/db.component";
 import firebase = require("nativescript-plugin-firebase");
 import * as ApplicationSettings from "application-settings";
+
+import {DBStructure} from "../../components/Database/db.component";
+
 
 @Component({
     selector: "create",
@@ -29,7 +33,7 @@ export class CreateComponent {
     save() {
         this.Name = this.firstname;
         if(this.firstname !="" && this.lastname !="") {
-              createUser("rth","thid","tjiasf","dfjk");
+        DBStructure.createUser(this.firstname,this.lastname, "10","c");
             // this.personList.push({firstname: this.firstname, lastname: this.lastname});
             // ApplicationSettings.setString("people", JSON.stringify(this.personList));
             this.location.back();

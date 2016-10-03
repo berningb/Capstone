@@ -1,8 +1,12 @@
 import {Component} from "@angular/core";
+var $ = require("jquery");
 import {Location} from "@angular/common";
 import {Router} from "@angular/router-deprecated";
 import firebase = require("nativescript-plugin-firebase");
 import * as ApplicationSettings from "application-settings";
+
+import {DBStructure} from "../../components/Database/db.component";
+
 
 @Component({
     selector: "list",
@@ -14,10 +18,13 @@ export class ListComponent {
 
     constructor(router: Router, location: Location) {
         this.router = router;
-        this.personList = JSON.parse(ApplicationSettings.getString("people", "[]"));
-        location.subscribe((path) => {
-            this.personList = JSON.parse(ApplicationSettings.getString("people", "[]"));
-        });
+        console.log(DBStructure.getUsers());
+        // console.log(JSON.parse(DBStructure.getUsers()));
+        // console.log(JSON.parse( DBStructure.getInfo("Users") ));
+        // this.personList = JSON.parse( DBStructure.getInfo("/Users") );
+        // location.subscribe((path) => {
+        //     this.personList = JSON.parse(ApplicationSettings.getString("people", "[]"));
+        // });
     }
 
 

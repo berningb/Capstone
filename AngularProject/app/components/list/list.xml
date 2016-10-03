@@ -3,9 +3,9 @@
 </ActionBar>
 
 <GridLayout>
-    <ListView [items]="personList">
-        <template let-item="item">
+    <!--<ListView [items]="personList">
+        <!--<template let-item="item">
             <Label [text]="item.firstname + ' ' + item.lastname"></Label>
-        </template>
-    </ListView>
+        </template>-->
+    <!--</ListView>-->
 </GridLayout>
