@@ -27,8 +27,6 @@ export class CreateComponent {
         this.personList = JSON.parse(ApplicationSettings.getString("people", "[]"));
         this.firstname = "";
         this.lastname = "";
-        
-        
     }
     save() {
         this.Name = this.firstname;
